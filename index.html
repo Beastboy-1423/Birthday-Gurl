@@ -6,19 +6,20 @@
     <title>Happy Birthday Nireeksha!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            /* Premium, deep dark radial background with tech neon undertones */
-            background: radial-gradient(circle at 50% 50%, #1a1528 0%, #0d0a15 100%);
+            font-family: 'Outfit', sans-serif;
+            background: #09070f;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,167 +28,182 @@
             position: relative;
         }
 
-        /* Ambient Background Glows */
-        body::before, body::after {
-            content: '';
+        /* High-Definition Moving Mesh Background */
+        .bg-mesh {
             position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.15;
+            top: 0; left: 0; right: 0; bottom: 0;
             z-index: 0;
-            pointer-events: none;
+            background: 
+                radial-gradient(at 0% 0%, rgba(255, 51, 102, 0.18) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(0, 230, 118, 0.12) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(0, 176, 255, 0.15) 0px, transparent 50%);
+            filter: blur(40px);
+            animation: meshMove 20s ease infinite alternate;
         }
-        body::before { background: #ff3366; top: 20%; left: 10%; }
-        body::after { background: #00e676; bottom: 20%; right: 10%; }
 
-        /* Modern Glassmorphism System Window Container */
+        @keyframes meshMove {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1) rotate(2deg); }
+        }
+
+        /* Hyper-Glassmorphism Container */
         .window-container {
-            background: rgba(25, 20, 35, 0.65);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 204, 211, 0.15);
-            border-radius: 24px;
+            background: rgba(18, 14, 28, 0.75);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 28px;
             width: 92%;
-            max-width: 400px;
-            padding: 24px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            max-width: 410px;
+            padding: 28px;
+            box-shadow: 
+                0 4px 30px rgba(0, 0, 0, 0.4),
+                0 30px 70px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             text-align: center;
             position: relative;
             z-index: 10;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .window-header {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.5);
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            gap: 10px;
+            margin-bottom: 24px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
+        .dot-wrapper {
+            display: flex;
+            gap: 6px;
+        }
         .dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
         }
-        .dot.red { background: #ff5f56; box-shadow: 0 0 8px rgba(255, 95, 86, 0.4); }
-        .dot.yellow { background: #ffbd2e; box-shadow: 0 0 8px rgba(255, 189, 46, 0.4); }
-        .dot.green { background: #27c93f; box-shadow: 0 0 8px rgba(39, 201, 63, 0.4); }
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27c93f; }
 
-        /* Clean Terminal Box */
+        .system-title-text {
+            margin-left: auto;
+        }
+
+        /* HD Terminal Box */
         .terminal-box {
-            background: rgba(10, 8, 15, 0.85);
-            color: #5bf1b7;
-            font-family: 'Fira Code', monospace;
-            padding: 16px;
-            border-radius: 12px;
+            background: #07050a;
+            color: #00ffaa;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 18px;
+            border-radius: 16px;
             text-align: left;
-            font-size: 13px;
+            font-size: 12.5px;
             line-height: 1.6;
-            min-height: 90px;
-            margin-bottom: 24px;
+            min-height: 95px;
+            margin-bottom: 28px;
             word-break: break-word;
-            border: 1px solid rgba(91, 241, 183, 0.15);
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+            border: 1px solid rgba(0, 255, 170, 0.15);
+            box-shadow: 
+                inset 0 4px 20px rgba(0,0,0,0.8),
+                0 0 20px rgba(0, 255, 170, 0.03);
         }
 
         .window-title {
-            font-size: 24px;
+            font-size: 26px;
             color: #ffffff;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             letter-spacing: -0.5px;
         }
 
         .window-subtitle {
             font-size: 15px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 28px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 32px;
         }
 
-        /* Buttons Styling */
+        /* Ultra-Clean UI Buttons */
         .btn {
             display: block;
             width: 100%;
-            padding: 16px;
+            padding: 18px;
             border: none;
-            border-radius: 30px;
+            border-radius: 40px;
             font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            font-weight: 800;
+            letter-spacing: 1px;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-upgrade {
-            background: linear-gradient(135deg, #00e676 0%, #00b0ff 100%);
-            color: #051a0e;
-            margin-bottom: 14px;
-            box-shadow: 0 8px 25px rgba(0, 230, 118, 0.3);
+            background: linear-gradient(135deg, #00ff88 0%, #00b0ff 100%);
+            color: #030a06;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.3);
         }
         .btn-upgrade:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0, 230, 118, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 255, 136, 0.5);
+            filter: brightness(1.1);
         }
 
         .btn-stay {
-            background: rgba(255, 51, 102, 0.15);
-            color: #ff3366;
-            border: 1px solid rgba(255, 51, 102, 0.3);
-            box-shadow: 0 4px 15px rgba(255, 51, 102, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             position: absolute;
-            width: calc(100% - 48px);
-            left: 24px;
+            width: calc(100% - 56px);
+            left: 28px;
         }
         .btn-stay:hover {
-            background: rgba(255, 51, 102, 0.25);
+            background: rgba(255, 51, 102, 0.15);
+            color: #ff3366;
+            border-color: rgba(255, 51, 102, 0.3);
         }
 
-        /* Final Celebration Card Interface */
+        /* Final Celebration Card */
         .card-container {
-            background: rgba(25, 20, 35, 0.7);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 32px;
+            background: rgba(18, 14, 28, 0.75);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 36px;
             width: 92%;
-            max-width: 400px;
-            padding: 40px 24px;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5),
-                        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            max-width: 410px;
+            padding: 44px 28px;
+            box-shadow: 
+                0 35px 80px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
             text-align: center;
             display: none;
             opacity: 0;
-            transform: scale(0.9) translateY(20px);
-            transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            transform: scale(0.92) translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 10;
         }
 
-        /* Polished Profile Frame */
+        /* High Clarity Avatar Frame */
         .img-frame {
-            width: 150px;
-            height: 150px;
+            width: 156px;
+            height: 156px;
             border-radius: 50%;
-            margin: 0 auto 24px;
+            margin: 0 auto 28px;
             padding: 4px;
-            background: linear-gradient(135deg, #ff3366, #ff99cc, #00b0ff);
-            box-shadow: 0 12px 35px rgba(255, 51, 102, 0.4);
-            position: relative;
-        }
-
-        .img-frame::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 50%;
-            box-shadow: inset 0 0 12px rgba(255,255,255,0.6);
-            pointer-events: none;
+            background: linear-gradient(135deg, #ff3366, #ff00aa, #00d4ff);
+            box-shadow: 
+                0 16px 40px rgba(255, 0, 170, 0.35),
+                0 0 0 8px rgba(255, 255, 255, 0.02);
         }
 
         .img-frame img {
@@ -195,51 +211,53 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid #191423;
+            border: 4px solid #100b1a;
         }
 
         .main-title {
-            font-size: 20px;
-            color: #ff99cc;
+            font-size: 14px;
+            color: #ff00aa;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-bottom: 4px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            text-shadow: 0 0 10px rgba(255, 0, 170, 0.3);
         }
 
         .name-banner {
-            font-size: 36px;
-            background: linear-gradient(135deg, #ffffff 30%, #ff99cc 100%);
+            font-size: 40px;
+            background: linear-gradient(135deg, #ffffff 40%, #ff99cc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             letter-spacing: -1px;
         }
 
         .badge {
             display: inline-block;
-            background: linear-gradient(90deg, rgba(255,51,102,0.2), rgba(255,153,204,0.2));
-            color: #ff99cc;
-            border: 1px solid rgba(255, 51, 102, 0.3);
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 13px;
+            background: linear-gradient(90deg, rgba(255,0,170,0.15), rgba(0,212,255,0.15));
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 12.5px;
             font-weight: 700;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(255, 51, 102, 0.15);
+            letter-spacing: 0.5px;
+            margin-bottom: 34px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        /* Lyrics Dynamic Box */
+        /* Clean High-Clarity Lyrics Box */
         .lyrics-box {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 600;
-            color: rgba(255, 255, 255, 0.6);
-            min-height: 52px;
-            margin-bottom: 30px;
-            padding: 0 10px;
+            color: rgba(255, 255, 255, 0.65);
+            min-height: 56px;
+            margin-bottom: 34px;
+            padding: 0 8px;
             line-height: 1.5;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -247,8 +265,10 @@
 
         .lyrics-highlight {
             color: #ffffff;
-            text-shadow: 0 0 15px rgba(255, 51, 102, 0.8), 0 0 30px rgba(255, 51, 102, 0.4);
-            transform: scale(1.05);
+            text-shadow: 
+                0 0 20px rgba(255, 0, 170, 0.8),
+                0 0 40px rgba(0, 212, 255, 0.4);
+            transform: scale(1.06);
             font-weight: 800;
         }
 
@@ -256,30 +276,32 @@
             font-size: 11px;
             color: rgba(255, 255, 255, 0.3);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 20px;
+            padding-top: 24px;
         }
 
-        /* Polished Confetti Elements */
+        /* High-Definition Confetti Streams */
         .confetti {
             position: absolute;
-            width: 6px;
-            height: 6px;
-            top: -10px;
+            width: 5px;
+            height: 12px;
+            top: -20px;
             z-index: 1;
-            border-radius: 2px;
+            border-radius: 3px;
             animation: fall linear infinite;
         }
 
         @keyframes fall {
             to {
-                transform: translateY(105vh) rotate(540deg);
+                transform: translateY(105vh) rotate(720deg);
             }
         }
     </style>
 </head>
 <body>
+
+    <div class="bg-mesh"></div>
 
     <audio id="bg-music" preload="auto">
         <source src="Be_My_Baby-320258-mobiles24.mp3" type="audio/mpeg">
@@ -287,10 +309,12 @@
 
     <div class="window-container" id="setup-window">
         <div class="window-header">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green"></div>
-            <span>Nireeksha_OS - System Update</span>
+            <div class="dot-wrapper">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <span class="system-title-text">Nireeksha_OS - System Update</span>
         </div>
         <div class="terminal-box" id="terminal-text">
             > Initializing Nireeksha_OS kernel... Verifying age parameters... Update Recommended.
@@ -298,9 +322,9 @@
         <h2 class="window-title">System v22.0 is expiring soon.</h2>
         <p class="window-subtitle">Upgrade to v23.0 now?</p>
         
-        <button class="btn btn-upgrade" onclick="triggerUpgrade()">YES, UPGRADE</button>
-        <button class="btn btn-stay" id="stay-btn" onmouseover="evadeButton()" onclick="evadeButton()">STAY 22</button>
-        <div style="height: 55px;"></div> 
+        <button class="btn btn-upgrade" onclick="triggerUpgrade()">YES, UPGRADE NOW</button>
+        <button class="btn btn-stay" id="stay-btn" onmouseover="evadeButton()" onclick="evadeButton()">STAY v22.0</button>
+        <div style="height: 60px;"></div> 
     </div>
 
     <div class="card-container" id="celebration-card">
@@ -309,7 +333,7 @@
         </div>
         <h1 class="main-title">Happy 23rd Birthday</h1>
         <div class="name-banner">Nireeksha</div>
-        <span class="badge">Level 23 Unlocked!</span>
+        <span class="badge">🚀 Level 23 Unlocked</span>
         
         <div class="lyrics-box" id="lyrics-display">🎵 Music initializing...</div>
         
@@ -335,11 +359,11 @@
             prankStage = (prankStage + 1) % messages.length;
 
             const container = document.getElementById('setup-window');
-            const maxWidth = container.clientWidth - stayBtn.clientWidth - 20;
-            const maxHeight = 260; 
+            const maxWidth = container.clientWidth - stayBtn.clientWidth - 30;
+            const maxHeight = 240; 
             
-            const randomX = Math.floor(Math.random() * maxWidth) + 10;
-            const randomY = Math.floor(Math.random() * maxHeight) - 110; 
+            const randomX = Math.floor(Math.random() * maxWidth) + 15;
+            const randomY = Math.floor(Math.random() * maxHeight) - 100; 
 
             stayBtn.style.left = randomX + 'px';
             stayBtn.style.top = randomY + 'px';
@@ -356,10 +380,10 @@
             }, 50);
 
             audio.play().catch(error => {
-                console.log("Audio autoplay prevented.");
+                console.log("Audio play deferred.");
             });
             
-            setInterval(createConfetti, 120);
+            setInterval(createConfetti, 100);
             startLyricEngine();
         }
 
@@ -400,18 +424,18 @@
             });
         }
 
-        const colors = ['#ff3366', '#ff99cc', '#ffbd2e', '#00e676', '#00b0ff'];
+        const colors = ['#ff3366', '#ff00aa', '#ffbd2e', '#00ff88', '#00d4ff'];
         function createConfetti() {
             const confetti = document.createElement('div');
             confetti.classList.add('confetti');
             confetti.style.left = Math.random() * 100 + 'vw';
             confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.width = Math.random() * 6 + 6 + 'px';
-            confetti.style.height = (Math.random() * 10 + 6) + 'px'; // Varied shapes
-            confetti.style.animationDuration = Math.random() * 1.5 + 2 + 's';
+            confetti.style.width = Math.random() * 4 + 4 + 'px';
+            confetti.style.height = (Math.random() * 12 + 8) + 'px'; // Sleek streamer rectangles
+            confetti.style.animationDuration = Math.random() * 1.2 + 1.8 + 's';
             
             document.body.appendChild(confetti);
-            setTimeout(() => confetti.remove(), 3500);
+            setTimeout(() => confetti.remove(), 3000);
         }
     </script>
 </body>
